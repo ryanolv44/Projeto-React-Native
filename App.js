@@ -1,11 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import TarefaList from './components/TarefaList';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>REND</Text>
-      <StatusBar style="auto" />
+      <TarefaList />
     </View>
   );
 }
