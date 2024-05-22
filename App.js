@@ -1,19 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native';
-import TarefaList from './components/TarefaList';
+import React from 'react';
+import AppNavigator from './src/AppNavigator';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <TarefaList />
-    </View>
-  );
-}
+const App = () => {
+  return <AppNavigator />;
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
