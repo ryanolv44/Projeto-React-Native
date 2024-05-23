@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import TaskForm from '../components/TaskForm';
 import TaskList from '../components/TaskList';
 
 const TasksScreen = () => {
+  const [tasks, setTasks] = useState([]);
+
   const handleTaskCreated = (newTask) => {
-    // Lógica para atualizar a lista de tarefas após a criação
+    setTasks([...tasks, newTask]);
   };
 
   return (
     <View style={styles.container}>
       <TaskForm onTaskCreated={handleTaskCreated} />
-      <TaskList />
+      <TaskList tasks={tasks} setTasks={setTasks} />
     </View>
   );
 };

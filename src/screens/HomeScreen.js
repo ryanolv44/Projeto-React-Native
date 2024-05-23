@@ -1,22 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import TaskList from '../components/TaskList';
 import TransactionList from '../components/TransactionList';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Resumo das Tarefas</Text>
       <TaskList />
       <Text style={styles.title}>Resumo das Finanças</Text>
       <TransactionList />
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flexGrow: 1,
     padding: 20,
   },
   title: {

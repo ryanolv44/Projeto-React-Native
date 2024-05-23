@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import TransactionForm from '../components/TransactionForm';
 import TransactionList from '../components/TransactionList';
 
 const FinancesScreen = () => {
+  const [transactions, setTransactions] = useState([]);
+
   const handleTransactionCreated = (newTransaction) => {
-    // Lógica para atualizar a lista de transações após a criação
+    setTransactions([...transactions, newTransaction]);
   };
 
   return (
     <View style={styles.container}>
       <TransactionForm onTransactionCreated={handleTransactionCreated} />
-      <TransactionList />
+      <TransactionList transactions={transactions} setTransactions={setTransactions} />
     </View>
   );
 };
